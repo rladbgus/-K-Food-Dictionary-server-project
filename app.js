@@ -8,7 +8,7 @@ const app = express();
 const PORT = 5000;
 
 const userRouter = require('./routes/users');
-const productRouter = require('./routes/products');
+// const productRouter = require('./routes/products');
 
 dotenv.config();
 app.use(cors());
@@ -25,7 +25,7 @@ app.use(express.json()); // body-parser역할
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/user', userRouter);
-app.use('/product', productRouter);
+// app.use('/product', productRouter);
 
 app.get('/', (req, res) => {
   res.send('hello world');
