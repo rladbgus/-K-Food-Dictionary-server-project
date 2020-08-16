@@ -12,7 +12,11 @@ module.exports = {
         }
       })
         .then(result => {
-          res.status(200).send(result);
+          console.log(result);
+          res.status(200).send({
+            username: result.username,
+            email: result.email
+          });
         })
     } else {
       res.status(401).send('need user session');

@@ -1,6 +1,6 @@
 const { User } = require('../../models');
 const dotenv = require('dotenv');
-const crypto = require('crypto');
+// const crypto = require('crypto');
 
 dotenv.config();
 
@@ -9,7 +9,7 @@ module.exports = {
         User.findOne({
             where: {
                 email: req.body.email,
-                password: crypto.createHash('sha256').update(req.body.password).digest('hex')
+                password: req.body.password
             }
         })
             .then(data => {

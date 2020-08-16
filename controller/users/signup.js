@@ -11,7 +11,6 @@ module.exports = {
                 email: req.body.email,
                 username: req.body.username,
                 password: crypto.createHash('sha256').update(req.body.password).digest('hex'),
-                mobile: req.body.mobile
             }
         })
             .then(([result, created]) => {
