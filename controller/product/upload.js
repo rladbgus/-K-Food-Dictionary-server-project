@@ -8,13 +8,13 @@ module.exports = {
   
   post: async (req, res) => {
     try {
-      const { foonName, foodInfo, tip, spicy, sort} = req.body;
+      const { foodName, foodInfo, tip, spicy, sort} = req.body;
       let { image } = req.body;
 
       image = image.join(',') // 배열로 요청이오므로 문자열로 변환 후 저장
       console.log(req.body);
       const data = await FoodInfo.create({
-        foodname: foonName,
+        foodname: foodName,
         sort: sort,
         spicy: spicy,
         tip: tip,

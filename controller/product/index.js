@@ -3,4 +3,5 @@ module.exports = {
   sendFoodInfo: require('./sendFoodInfo'),
   saveImage: require('./saveImage'),
   upload: require('./upload'),
+  likeProduct: require('./likeProduct'),
 };

@@ -6,7 +6,7 @@ dotenv.config();
 module.exports = {
   // 페이지 업로드 요청시 데이터 추가하는 로직 테스트가 필요합니다.
   // 대분류
-  post: async (req, res) => {
+  get: async (req, res) => {
     let sumFoodData = []
     try {
       const { sort } = req.body;

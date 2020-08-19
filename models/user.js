@@ -40,6 +40,6 @@ module.exports = class User extends Model {
     });
   }
   static associate(db) {
-    db.User.belongsToMany(db.FoodInfo, {through: 'User_FoodInfo'});
+    db.User.belongsToMany(db.FoodInfo, {through: 'Like', as:"Liked", onDelete: 'cascade'});
   }
 };
