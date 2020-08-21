@@ -9,15 +9,14 @@ module.exports = {
   get: async (req, res) => {
     let sumFoodData = []
     try {
-      const { sort } = req.body;
-      console.log(sort);
+      const { productId } = req.params;
+      console.log(productId);
       const foodData = await FoodInfo.findAll({
-        where: { sort }
+        where: { sort: productId }
       });
       // 모든 데이터 합친 후 클라이언트에 넘겨주기
       foodData.forEach((e) => {
         e.image = e.image.split(',');
-        console.log(e.image,'222313', e.foodname);
         sumFoodData.push({id: e.id, foodname: e.foodname, sort: e.sort, spicy: e.spicy, tip: e.tip, image: e.image, foodInfo: e.foodInfo });
       });
       

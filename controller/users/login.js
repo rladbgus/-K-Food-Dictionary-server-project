@@ -6,6 +6,7 @@ dotenv.config();
 
 module.exports = {
     post: async (req, res) => {
+<<<<<<< HEAD
         console.log('여기');
         const { email, password } = req.body;
 
@@ -29,6 +30,18 @@ module.exports = {
         } else {
             return res.status(200).json({ success: true, token })
         }
+=======
+      console.log('여기');
+      const { email , password } = req.body;
+      
+      // jwt 발급 / 만든다. // token = sdnajsdn2njndnjandkasjdnjnskdnwsadasdasdasd
+      let token = jwt.sign({
+        // email : email = email => 키와벨류값이 같으면 email로 생략가능 ES6문법 // .env 'qlalfdldi'
+        email
+      }, process.env.JWT_SECRET, {
+        expiresIn: '50m'
+      });
+>>>>>>> 90cea4275b74f1e599549535214e91547528f178
 
     }
 };

@@ -6,8 +6,8 @@ const { User } = require('../models');
 module.exports = () => {
   console.log('여기');
   passport.use(new GoogleStrategy({
-    clientID: '418088285416-1d6f6unkde719sgr1f389etia49skjlq.apps.googleusercontent.com',
-    clientSecret: 'Kuh_63aHh_1WeMcvbvhWmXe2',
+    clientID: process.env.GOOGLE_ID,
+    clientSecret: process.env.GOOGLE_SECRET,
     callbackURL: '/auth/google/callback',
   }, async (accessToken, refreshToken, profile, done) => {
     console.log('kakao profile', profile);
